@@ -1,0 +1,24 @@
+<section class="row">
+  <article class="column">
+    <h2>City</h2>
+    <ul>
+      <%= for city <- Map.keys(@cities) do %>
+      <li>
+        <a href="#<%= city %>"><%= String.capitalize("#{city}") %></a>
+      </li>
+      <% end %>
+    </ul>
+    <br/><br/><br/><br/>
+    <h5>Go to <a href="/widgets/42">Live View Local Jump Bug Demo</a></h5>
+  </article>
+
+  <article class="column">
+    <%= for {city, lorem} <- @cities do %>
+    <a name="<%= city %>"></a>
+    <h2><%= String.capitalize("#{city}") %></h2>
+    <p>
+      <%= lorem %>
+    </p>
+    <% end %>
+  </article>
+</section>
