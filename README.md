@@ -1,5 +1,7 @@
 # DeadLift
 
+NOTE: this was a demo of a [now-fixed bug](https://github.com/phoenixframework/phoenix_live_view/issues/296)
+
 Demo of a possible bug with the way LiveView handles in-page anchor tags.
 
 ## Repro Steps
