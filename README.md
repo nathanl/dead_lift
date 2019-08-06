@@ -11,7 +11,7 @@ I performed the following steps on MacOS 10.14.6 using Firefox Developer Edition
 ## Correct behavior: controller-rendered page
 
 - Visit `localhost:4000`. This page is controller-rendered.
-- Click some of the anchor tags (city names). In all three browsers, this does not trigger requests to the server.
+- Click some of the anchor tags (city names). In all three browsers, this *navigates within the page without triggering requests to the server*.
 
 ## Incorrect behavior: LV-rendered page
 
