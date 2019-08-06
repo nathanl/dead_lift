@@ -8,7 +8,14 @@ To set up, clone this repo, `mix deps.get`, `npm install --prefix assets`, and `
 
 I performed the following steps on MacOS 10.14.6 using Firefox Developer Edition (69.0b5 (64-bit)), Chrome (75.0.3770.142), Safari (12.1.2 (14607.3.9)).
 
-- Visit `localhost:4000`. This page is controller-rendered. In all three browsers, clicking the anchor tags (city names) does not trigger requests to the server.
-- Click the link to visit `/widgets/42`. This renders the same template, but under a live view. Clicking the links causes the following behavior:
+## Correct behavior: controller-rendered page
+
+- Visit `localhost:4000`. This page is controller-rendered.
+- Click some of the anchor tags (city names). In all three browsers, this does not trigger requests to the server.
+
+## Incorrect behavior: LV-rendered page
+
+- Click the link to visit `/widgets/42`. This renders the same template, but under a live view.
+- Click some of the anchor tags. This causes the following behavior:
   - In Firefox, a single request is made to the controller, a log statement in the live view's `mount/2` function is printed, but the live view's "loading" state never clears
   - In Chrome and in Safari, many identical requests are made to the server, a log statement in the live view's `mount/2` function is printed many times, but the live view's "loading" state never clears
